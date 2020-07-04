@@ -1,3 +1,5 @@
+import storage from './storage';
+
 /**
  * Returns a function, that, as long as it continues to be invoked, will not
  * be triggered. The function will be called after it stops being called for
@@ -312,7 +314,8 @@ const buildLink = function (uri) {
  * Detect touch-ability
  */
 const isTouchDevice = function () {
-  return 'ontouchstart' in document.documentElement;
+  const ui = storage.get('ui');
+  return 'ontouchstart' in document.documentElement || ui.touch;
 };
 
 /**

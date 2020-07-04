@@ -280,6 +280,17 @@ class Settings extends React.Component {
                   Use wide scrollbars
                 </span>
               </label>
+              <label>
+                <input
+                  type="checkbox"
+                  name="touch"
+                  checked={ui.touch}
+                  onChange={(e) => uiActions.set({ touch: !ui.touch })}
+                />
+                <span className="label">
+                  Force touchscreen mode
+                </span>
+              </label>
             </div>
           </div>
 
